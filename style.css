@@ -1,0 +1,254 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.banner{
+    width: 100%;
+    height: 100vh;
+    background-color: #222429;
+}
+
+.navbar{
+    color: #fff;
+    /*width: 80%;*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto 100px;
+    padding: 35px 0;
+}
+
+.left-nav,.right-nav, .middle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*gap: 1.5rem;*/
+}
+
+.right-nav a, .middle a{
+    cursor: pointer;
+    margin: 0 20px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.profile{
+    margin: 0 20px;
+}
+
+.right-nav a::after, .middle a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: #009688;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+.right-nav a:hover::after, .middle a:hover::after{
+    width: 100%;
+}
+
+
+.logo{
+    cursor: pointer;
+}
+
+.profile{
+    border-radius: 100%;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+}
+
+.card-box{
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    /*align-items: center;*/
+    /*flex-wrap: wrap;*/
+    
+    
+}
+
+.card{
+    width: 300px;
+    color: #fff;
+    margin: 0 20px;
+    background-color: #1c1f2b;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.content{
+    padding: 30px 30px;
+    line-height: 1.3;
+}
+
+.card h2{
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.card h2 a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.card h2 a:hover{
+    background: linear-gradient(90deg, #00dbde, #fc00ff);
+    text-transform: uppercase;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: 2s;
+}
+
+.cls:hover{
+    background: linear-gradient(90deg, #00dbde, #fc00ff);
+    text-transform: uppercase;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: 2s;
+}
+
+.card p{
+    font-size: 17px;
+    margin-bottom: 20px;
+    color: #E1D9D1;
+}
+
+.card .read{
+    font-size: 17px;
+    font-weight: bold;
+    color: #e0222e;
+    text-decoration: none;
+}
+
+@property --angle{
+syntax: "<angle>";
+initial-value: 0deg;
+inherits: false;
+}
+
+.card::after, .card::before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    /*background-image: conic-gradient(#ff4545, #00ff99, #006aff, #ff0095, #ff4545);*/
+    /*background-image: conic-gradient(from var(--angle), transparent 70%, #006aff);*/
+    background-image: conic-gradient(from var(--angle), transparent 70%, #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 10px;
+    animation: 3s spin linear infinite;
+}
+
+.card::before{
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+
+@keyframes spin{
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
+}
+
+.foot{
+    width: 100%;
+    /*margin-top: 500px;*/
+    position: absolute;
+    bottom: 0;
+}
+
+.bottom-section{
+    /*width: 80%;*/
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    margin: auto 100px;
+    text-decoration: none;
+}
+
+.bottom-section .bottom-left a, .bottom-section .bottom-middle a, .bottom-section .bottom-right a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.bottom-section .bottom-left a, .bottom-section .bottom-right a{
+    margin: 0 20px;
+}
+
+.section{
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    align-items: center;
+}
+
+/**/
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding-top: 60px;
+}
+  
+  /* Modal Content (the image) */
+.modal-content{
+    margin: auto;
+    display: block;
+    max-width: 80%;
+}
+  
+  /* Caption of Modal Image (if needed) */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+}
+  
+  /* The Close Button */
+.close{
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.music{
+    display: none;
+}
+  

@@ -1,0 +1,121 @@
+/*@import url();*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url("../assets/img1/form1.jpg");
+    background-size: cover;
+    color: #333;
+    height: 100vh;
+}
+
+.container{
+    margin: 0 15px;
+    position: relative;
+}
+
+.form-box{
+    width: 100%;
+    max-width: 450px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+h2{
+    font-size: 34px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input,select{
+    width: 100%;
+    padding: 12px;
+    background-color: #eee;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+button{
+    width: 100%;
+    padding: 12px;
+    background-color: #7494ec;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+button:hover{
+    background: #6884d3;
+}
+
+p{
+    font-size: 14.5px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+p a{
+    text-decoration: none;
+    /*color: #7494ec;*/
+}
+
+p a:hover{
+    text-decoration: underline;
+}
+
+
+@property --angle{
+    syntax: "<angle>";
+   /* initial-value: 0deg;*/
+    initial-value: 53deg;
+    inherits: false;
+    }
+    
+.form-box::after, .form-box::before{
+    position: absolute;
+    content: '';
+    width: 101%;
+    height: 101%;
+    /*background-image: conic-gradient(#ff4545, #00ff99, #006aff, #ff0095, #ff4545);*/
+    /*background-image: conic-gradient(from var(--angle), transparent 70%, #006aff);*/
+    /*background-image: conic-gradient(from var(--angle), transparent 50%, #006aff, #060c21,#006aff,#060c21,#006aff);*/
+    background-image: conic-gradient(from var(--angle), /*transparent 50%,*/ #0c630c21, #0c63e7,#0c63e7,#060c21,#0c63e7);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 10px;
+    animation: 3.5s spin linear infinite;
+}
+
+.form-box::before{
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+
+@keyframes spin{
+    from{
+        /*--angle: 0deg;*/
+        --angle: 53deg;
+    }
+    to{
+        /*--angle: 360deg;*/
+        --angle: 413deg;
+    }
+}
